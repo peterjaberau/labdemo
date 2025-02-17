@@ -11,6 +11,7 @@ const AuthorityCheck = (props: AuthorityCheckProps) => {
 
     const roleMatched = useAuthority(userAuthority, authority)
 
+
     return <>{roleMatched ? children : null}</>
 }
 

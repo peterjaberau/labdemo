@@ -1,5 +1,8 @@
 import React, { ReactNode, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { contentItems } from '@/views/eui/CoreApp/AppRoutes'
+
 import {
     EuiHeaderSectionItemButton,
     EuiHeaderLogo,
@@ -689,7 +692,15 @@ const Header = () => {
         />
     )
 
+    const navigate = useNavigate()
+
+
     const collapsibleNavId = useGeneratedHtmlId({ prefix: 'collapsibleNav' })
+
+    const collapsibleNavItems = contentItems.map(item => ({
+        onClick: () => navigate(`/eui/core-app?render=${item.key}`),
+        title: item.title,
+    }))
 
 
     const collapsibleNavBeta = (
@@ -700,6 +711,14 @@ const Header = () => {
             id={collapsibleNavId}
         >
             <EuiCollapsibleNavBeta.Body>
+                <EuiCollapsibleNavItem
+                    icon="desktop"
+                    isCollapsible={true}
+                    initialIsOpen
+                    items={collapsibleNavItems}
+                    title="Browse"
+                />
+
                 <EuiCollapsibleNavItem
                     icon="desktop"
                     isCollapsible={true}

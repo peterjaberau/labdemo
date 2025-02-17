@@ -14,7 +14,7 @@ const euiRoute: Routes = [
             layout: 'blank',
             pageContainerType: 'gutterless',
             footer: false,
-        },
+        }
     },
 
 

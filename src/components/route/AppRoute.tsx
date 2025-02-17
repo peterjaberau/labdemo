@@ -47,6 +47,8 @@ const AppRoute = <T extends Record<string, unknown>>({
         handleLayoutChange()
     }, [location, handleLayoutChange])
 
+    console.log('AppRoute', routeKey)
+
     return <Component {...(props as T)} />
 }
 

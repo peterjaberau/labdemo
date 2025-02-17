@@ -14,6 +14,7 @@ const ProtectedRoute = () => {
         pathname === '/' ? '' : `?${REDIRECT_URL_KEY}=${location.pathname}`
 
     if (!authenticated) {
+        console.log('ProtectedRoute: !authenticated')
         return (
             <Navigate
                 replace
