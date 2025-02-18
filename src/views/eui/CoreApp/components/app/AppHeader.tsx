@@ -1,39 +1,48 @@
 import { EuiButton, EuiButtonEmpty, EuiFlexGroup, EuiFlexItem, EuiIcon, EuiText } from '@elastic/eui'
 import { EuiPageHeader, EuiPageTemplate, EuiPageSection, EuiPageHeaderSection, EuiTitle } from '@elastic/eui'
 
-export const OverviewPageHeader = () => {
+interface AppHeaderProps {
+    iconType?: string
+    pageTitle?: string
+    [key: string]: any
+}
+
+export const AppHeader = (props: AppHeaderProps) => {
+    const { iconType, title, ...rest } = props
+
     return (
 
-            <EuiPageTemplate.Header
-                iconType="logoElastic"
-                pageTitle="OpenSearch Dashboards"
-                alignItems="center"
-                rightSideItems={[
-                    <EuiFlexItem  grow={false}>
-                        <EuiFlexGroup responsive={false} wrap>
-                            <EuiFlexItem grow={false}>
-                                <EuiButtonEmpty size={'s'} flush={'both'} href={'#'} iconType={'gear'}>
-                                    Add data
-                                </EuiButtonEmpty>
+        <EuiPageTemplate.Header
+            iconType={iconType || 'logoElastic'}
+            pageTitle={title || 'untitled'}
+            alignItems="center"
+            { ...rest }
+            rightSideItems={[
+                <EuiFlexItem  grow={false}>
+                    <EuiFlexGroup responsive={false} wrap>
+                        <EuiFlexItem grow={false}>
+                            <EuiButtonEmpty size={'s'} flush={'both'} href={'#'} iconType={'gear'}>
+                                Add data
+                            </EuiButtonEmpty>
 
-                            </EuiFlexItem>
-                            <EuiFlexItem grow={false}>
-                                <EuiButtonEmpty size={'s'} flush={'both'} href={'#'} iconType={'gear'}>
-                                    Manage
-                                </EuiButtonEmpty>
+                        </EuiFlexItem>
+                        <EuiFlexItem grow={false}>
+                            <EuiButtonEmpty size={'s'} flush={'both'} href={'#'} iconType={'gear'}>
+                                Manage
+                            </EuiButtonEmpty>
 
-                            </EuiFlexItem>
+                        </EuiFlexItem>
 
-                            <EuiFlexItem grow={false}>
-                                <EuiButtonEmpty size={'s'} flush={'both'} href={'#'} iconType={'gear'}>
-                                    Dev tools
-                                </EuiButtonEmpty>
-                            </EuiFlexItem>
-                        </EuiFlexGroup>
-                    </EuiFlexItem>
+                        <EuiFlexItem grow={false}>
+                            <EuiButtonEmpty size={'s'} flush={'both'} href={'#'} iconType={'gear'}>
+                                Dev tools
+                            </EuiButtonEmpty>
+                        </EuiFlexItem>
+                    </EuiFlexGroup>
+                </EuiFlexItem>
 
-                ]}
-            />
+            ]}
+        />
 
 
     )

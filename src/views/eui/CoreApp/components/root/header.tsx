@@ -1,7 +1,7 @@
 import React, { ReactNode, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-import { contentItems } from '@/views/eui/CoreApp/AppRoutes'
+import { contentItems } from '@/views/eui/mapping'
 
 import {
     EuiHeaderSectionItemButton,
@@ -714,6 +714,7 @@ const Header = () => {
                 <EuiCollapsibleNavItem
                     icon="desktop"
                     isCollapsible={true}
+                    // @ts-ignore
                     initialIsOpen
                     items={collapsibleNavItems}
                     title="Browse"
