@@ -5,6 +5,7 @@ import WithTabCards from '@/views/eui/CoreApp/components/pages/WithTabCards'
 import WithTabbedContent from '@/views/eui/CoreApp/components/pages/WithTabbedContent'
 import WithGridSearch from '@/views/eui/CoreApp/components/pages/withGridSearch'
 import WithTableSearch from '@/views/eui/CoreApp/components/pages/withTableSeach'
+import AppDemo from '@/views/eui/CoreApp/components/demo/AppDemo'
 
 const defaultProps = {
     page: {
@@ -108,6 +109,13 @@ export const contentItems = [
                     iconType: 'visualizeApp'
                 }
             }
+        },
+    },
+    {
+        key: 'app-demo',
+        component: AppDemo,
+        title: 'App Demo',
+        props: {
         },
     },
 ] as const

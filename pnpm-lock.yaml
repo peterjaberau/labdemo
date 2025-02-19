@@ -71,6 +71,15 @@ importers:
       '@visx/pattern':
         specifier: ^3.13.0-alpha.0
         version: 3.13.0-alpha.0(react@19.0.0)
+      '@xstate/graph':
+        specifier: ^3.0.2
+        version: 3.0.2(xstate@5.19.2)
+      '@xstate/react':
+        specifier: ^5.0.2
+        version: 5.0.2(@types/react@19.0.8)(react@19.0.0)(xstate@5.19.2)
+      '@xstate/store':
+        specifier: ^3.0.1
+        version: 3.0.1(react@19.0.0)
       axios:
         specifier: ^1.7.7
         version: 1.7.9
@@ -209,6 +218,9 @@ importers:
       utility-types:
         specifier: ^3.11.0
         version: 3.11.0
+      xstate:
+        specifier: ^5.19.2
+        version: 5.19.2
       yet-another-react-lightbox:
         specifier: ^3.21.7
         version: 3.21.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -1655,6 +1667,31 @@ packages:
 
   '@xobotyi/scrollbar-width@1.9.5':
     resolution: {integrity: sha512-N8tkAACJx2ww8vFMneJmaAgmjAG1tnVBZJRLRcx061tmsLRZHSEZSLuGWnwPtunsSLvSqXQ2wfp7Mgqg1I+2dQ==}
+
+  '@xstate/graph@3.0.2':
+    resolution: {integrity: sha512-UvexSqy8V3LgUa5amm9r/MzQtI/+wHrXAbOBtXKmhdLfMqyfs0N6SlM6R9u6T9AhsYA1U3W1OYARhgUPfXFn4A==}
+    peerDependencies:
+      xstate: ^5.19.2
+
+  '@xstate/react@5.0.2':
+    resolution: {integrity: sha512-x5GOrE0ZYjU2ba986u0CCp7SaPwzElSn1SW0mZ9MuBgsZ+BW7vTLVOvGmURynwojdso8d6nVbK3c2+MRVqGVgA==}
+    peerDependencies:
+      react: 19.0.0
+      xstate: ^5.19.2
+    peerDependenciesMeta:
+      xstate:
+        optional: true
+
+  '@xstate/store@3.0.1':
+    resolution: {integrity: sha512-Or1zFDXMa5/ikJVankyUPjzC7r7lQ89GXkbCxvBEp28C7d9W0MDDklkhHDkKohGYmgaF7UrJb3YPMRApXaIEdg==}
+    peerDependencies:
+      react: 19.0.0
+      solid-js: ^1.7.6
+    peerDependenciesMeta:
+      react:
+        optional: true
+      solid-js:
+        optional: true
 
   '@yr/monotone-cubic-spline@1.0.3':
     resolution: {integrity: sha512-FQXkOta0XBSUPHndIKON2Y9JeQz5ZeMqLYZVVK93FliNBFm7LNMIZmY6FrMEB9XPcDbE2bekMbZD6kzDkxwYjA==}
@@ -4690,6 +4727,9 @@ packages:
     resolution: {integrity: sha512-si7QWI6zUMq56bESFvagtmzMdGOtoxfR+Sez11Mobfc7tm+VkUckk9bW2UeffTGVUbOksxmSw0AA2gs8g71NCQ==}
     engines: {node: '>=12'}
 
+  xstate@5.19.2:
+    resolution: {integrity: sha512-B8fL2aP0ogn5aviAXFzI5oZseAMqN00fg/TeDa3ZtatyDcViYLIfuQl4y8qmHCiKZgGEzmnTyNtNQL9oeJE2gw==}
+
   xtend@4.0.2:
     resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}
     engines: {node: '>=0.4'}
@@ -6208,6 +6248,24 @@ snapshots:
       - supports-color
 
   '@xobotyi/scrollbar-width@1.9.5': {}
+
+  '@xstate/graph@3.0.2(xstate@5.19.2)':
+    dependencies:
+      xstate: 5.19.2
+
+  '@xstate/react@5.0.2(@types/react@19.0.8)(react@19.0.0)(xstate@5.19.2)':
+    dependencies:
+      react: 19.0.0
+      use-isomorphic-layout-effect: 1.2.0(@types/react@19.0.8)(react@19.0.0)
+      use-sync-external-store: 1.4.0(react@19.0.0)
+    optionalDependencies:
+      xstate: 5.19.2
+    transitivePeerDependencies:
+      - '@types/react'
+
+  '@xstate/store@3.0.1(react@19.0.0)':
+    optionalDependencies:
+      react: 19.0.0
 
   '@yr/monotone-cubic-spline@1.0.3': {}
 
@@ -9816,6 +9874,8 @@ snapshots:
       ansi-styles: 6.2.1
       string-width: 5.1.2
       strip-ansi: 7.1.0
+
+  xstate@5.19.2: {}
 
   xtend@4.0.2: {}
 
