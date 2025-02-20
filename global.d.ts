@@ -57,3 +57,7 @@ declare module 'stream' {
     import { Stream } from 'stream';
     export = Stream;
 }
+
+declare module './src/views/eui/CoreApp/components/test/basic.js' {
+    export const functionMapping: Record<string, any>;
+}

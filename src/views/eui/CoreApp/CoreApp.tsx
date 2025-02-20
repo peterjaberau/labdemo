@@ -1,10 +1,11 @@
 import cache from '@/cache/iconCache'
 import { EuiProvider, EuiThemeProvider } from '@elastic/eui'
 import App from './App'
-import { DemoMachineProvider } from '@/views/eui/CoreApp/components/demo/DemoMachineContext'
+import { DemoMachineProvider, DemoMachineCardProvider } from '@/views/eui/CoreApp/components/demo/DemoMachineContext'
 
 const CoreApp = () => {
     return (
+        <DemoMachineCardProvider>
         <DemoMachineProvider>
             <EuiProvider cache={cache}>
                 <EuiThemeProvider>
@@ -12,6 +13,7 @@ const CoreApp = () => {
                 </EuiThemeProvider>
             </EuiProvider>
         </DemoMachineProvider>
+        </DemoMachineCardProvider>
     )
 }
 

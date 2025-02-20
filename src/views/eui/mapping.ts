@@ -6,6 +6,8 @@ import WithTabbedContent from '@/views/eui/CoreApp/components/pages/WithTabbedCo
 import WithGridSearch from '@/views/eui/CoreApp/components/pages/withGridSearch'
 import WithTableSearch from '@/views/eui/CoreApp/components/pages/withTableSeach'
 import AppDemo from '@/views/eui/CoreApp/components/demo/AppDemo'
+import AppDemoCard from '@/views/eui/CoreApp/components/demo/AppDemoCard'
+import { DemoTest } from '@/views/eui/CoreApp/components/test/DemoTest'
 
 const defaultProps = {
     page: {
@@ -115,6 +117,21 @@ export const contentItems = [
         key: 'app-demo',
         component: AppDemo,
         title: 'App Demo',
+        props: {
+        },
+    },
+    {
+        key: 'app-demo-card',
+        component: AppDemoCard,
+        title: 'App Demo Card',
+        props: {
+        },
+    },
+
+    {
+        key: 'demo-test',
+        component: DemoTest,
+        title: 'Demo Test',
         props: {
         },
     },

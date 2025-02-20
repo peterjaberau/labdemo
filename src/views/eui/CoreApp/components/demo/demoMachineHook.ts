@@ -1,4 +1,4 @@
-import { DemoMachineContext } from "./DemoMachineContext"
+import { DemoMachineContext, DemoMachineCardContext } from "./DemoMachineContext"
 
 export const useDemoMachine: any = () => {
 
@@ -8,5 +8,17 @@ export const useDemoMachine: any = () => {
     return {
         actor: actor,
         state: state,
+    }
+}
+
+
+export const useDemoMachineCard: any = () => {
+
+    const actorCard = DemoMachineCardContext.useActorRef();
+    const stateCard = DemoMachineCardContext.useSelector((state: any) => state);
+
+    return {
+        actorCard,
+        stateCard,
     }
 }
