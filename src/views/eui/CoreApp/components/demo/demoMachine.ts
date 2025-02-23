@@ -1,8 +1,9 @@
 import { createActor, createMachine, setup } from 'xstate'
-import { EuiButton, EuiCard, EuiAccordion, EuiCodeBlock } from '@elastic/eui'
+import { EuiButton, EuiCard, EuiAccordion, EuiCodeBlock, EuiText } from '@elastic/eui'
 import HomeDemo from './HomeDemo'
 import OneDemo from './OneDemo'
 import TwoDemo from '@/views/eui/CoreApp/components/demo/TwoDemo'
+import { Children } from 'react'
 
 export const demoMachine = setup({
     types: {
@@ -86,32 +87,6 @@ export const demoMachineCard = setup({}).createMachine({
                     level: 1,
 
                 },
-                children: [
-                    {
-                        component: EuiAccordion,
-                        props: {
-                            title: 'State Info',
-                            children: [
-                                {
-                                    component: EuiCodeBlock,
-                                    props: (state: any) => ({
-                                        language: 'json',
-                                        children: JSON.stringify(
-                                            {
-                                                path: 'root',
-                                                state: state.value,
-                                                matches: state.matches('root'),
-                                                context: state.context,
-                                            },
-                                            null,
-                                            2,
-                                        ),
-                                    }),
-                                },
-                            ]
-                        },
-                    },
-                ],
             },
             initial: 'level2',
             states: {
@@ -166,9 +141,10 @@ export const demoMachineCard = setup({}).createMachine({
                                         component: EuiCodeBlock,
                                         props: {
                                             language: 'json',
-                                            text: 'test'
+                                            children: ['Code'],
                                         }
-                                    }
+                                    },
+
                                 }
                             }
 
